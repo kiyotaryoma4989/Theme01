@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <title>レスポンシブサンプル</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+</head>
+
+<body>
+
+<header class="header">
+	<div class="logoWrap">
+		<h1>LOGO</h1>
+	</div>
+	<nav class="headerNav">
+		<ul>
+			<li><a href="#">TOP</a></li>
+			<li><a href="#">MENU1</a></li>
+			<li><a href="#">MENU2</a></li>
+			<li><a href="#">MENU3</a></li>
+			<li><a href="#">MENU4</a></li>
+			<li><a href="#">MENU5</a></li>
+		</ul>
+	</nav>
+
+	<!-- ハンバーガー -->
+    <div class="hamburger" id="hamburger">
+      <span class="hamburger_line hamburger_line-1"></span>
+      <span class="hamburger_line hamburger_line-2"></span>
+      <span class="hamburger_line hamburger_line-3"></span>
+    </div>
+    <div class="hamburger_bg" id="hamburger_bg"></div>
+</header>
+
+<main class="main">
+
+	<div class="slider">
+		<img src="images/01.jpg" alt="">
+	</div>
+
+	<div class="areaConcept">
+		<h2>CONCEPT</h2>
+		<p>ここにコンセプトテキストが入ります。ここにコンセプトテキストが入ります。ここにコンセプトテキストが入ります。ここにコンセプトテキストが入ります。ここにコンセプトテキストが入ります。<br>
+		ここにコンセプトテキストが入ります。ここにコンセプトテキストが入ります。ここにコンセプトテキストが入ります。</p>
+	</div>
+
+	<div class="areaProduct">
+		<ul>
+			<li class="wow wobble"><img src="images/02.jpg" alt=""></li>
+			<li class="wow bounceInDown"><img src="images/02.jpg" alt=""></li>
+			<li class="wow fadeInDown"><img src="images/02.jpg" alt=""></li>
+			<li class="wow lightSpeedIn"><img src="images/02.jpg" alt=""></li>
+			<li class="wow shake"><img src="images/02.jpg" alt=""></li>
+			<li class="wow tada"><img src="images/02.jpg" alt=""></li>
+		</ul>
+	</div>
+
+</main>
+
+<footer>
+	<dl class="footerLink">
+		<dt>LINKS :</dt>
+		<dd><a href="#">LINK1</a></dd>
+		<dd><a href="#">LINK2</a></dd>
+		<dd><a href="#">LINK3</a></dd>
+		<dd><a href="#">LINK4</a></dd>
+	</dl>
+	<small>Copyright &copy; 2020 PcPort All Rights Reserved.</small>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/wow.js"></script>
+<script>
+  /* SP menu */
+  function toggleNav() {
+  var body = document.body;
+  var hamburger = document.getElementById('hamburger');
+  var blackBg = document.getElementById('hamburger_bg');
+  hamburger.addEventListener('click', function() {
+    body.classList.toggle('navOpen'); 
+  });
+  blackBg.addEventListener('click', function() {
+    body.classList.remove('navOpen'); 
+  });
+}
+toggleNav();
+</script>
+<script>
+new WOW().init();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+}
+:root {
+  --main-width: 100%;
+  --sub-width: 1000px;
+  --keyColor1: #333333;
+}
+
+/* header */
+.header {
+  width: 100%;
+  background-color: #e6e6e6;
+  top: 0;
+  position: fixed;
+}
+.logoWrap {
+  width: var(--main-width);
+  max-width: var(--sub-width);
+  margin: 0 auto;
+}
+.logoWrap h1 {
+  font-size: 5.0rem;
+  padding: 10px 0;
+}
+.headerNav {
+  width: var(--main-width);
+  background-color: var(--keyColor1);
+}
+.headerNav ul {
+  max-width: var(--sub-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.headerNav ul li {
+  width: 100%;
+  text-align: center;
+}
+.headerNav ul li a {
+  display: block;
+  padding: 15px 0;
+  color: #fff;
+}
+
+/* main */
+.slider {
+  width: 100%;
+}
+.areaConcept {
+  width: var(--main-width);
+  max-width: var(--sub-width);
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
+}
+.areaConcept h2 {
+  font-size: 3.0rem;
+  margin-bottom: 60px;
+}
+.areaConcept p {
+  line-height: 3;
+}
+.areaProduct {
+  padding-bottom: 60px;
+}
+.areaProduct ul {
+  width: var(--main-width);
+  max-width: var(--sub-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.areaProduct ul li {
+  width: 30.33%;
+  box-sizing: border-box;
+  margin: 0 1.5% 30px
+}
+
+/* footer */
+footer {
+  width: 100%;
+  background-color: var(--keyColor1);
+}
+.footerLink {
+  width: width: 100%;
+  max-width: var(--sub-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footerLink dt,
+.footerLink dd {
+  width: 20%;
+  box-sizing: border-box;
+}
+.footerLink dt {
+  padding-top: 20px;
+  color: #fff;
+}
+.footerLink dd a {
+  display: block;
+  padding: 20px;
+  color: #fff;
+}
+footer small {
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  border-top: 1px solid #fff;
+}
+
+/* タブレット */
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 50%;
+  }
+  :root {
+  --main-width: 96%;
+  }
+  .headerNav ul {
+    transition: all .6s;
+    overflow-y: auto;
+    padding-top: 60px;
+    width: 300px;
+    height: 100vh;
+    z-index: 200;
+    top: 0;
+    right: -320px;
+    background-color: var(--keyColor1);
+    position: fixed;
+    display: block;
+  }
+  .headerNav ul li:last-child {
+    border-bottom: 1px solid #fff;
+  }
+  .areaProduct ul li {
+      width: 46%;
+      margin: 0 2% 30px;
+  }
+  .headerNav ul li a {
+    border-top: 1px solid #fff;
+  }
+
+  /* ハンバーガー */
+  .hamburger {
+    width: 44px;
+    height: 44px;
+    z-index: 300;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    position: absolute;
+  }
+  .hamburger_line {
+    transition: all .6s;
+    width: 34px;
+    height: 2px;
+    left: 5px;
+    background-color: #000;
+    position: absolute;
+    border-radius: 1px;
+  }
+  .hamburger_line-1 { top: 10px; }
+  .hamburger_line-2 { top: 22px; }
+  .hamburger_line-3 { top: 34px; }
+  .hamburger_bg {
+    opacity: 0;
+    transition: all .6s;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: #000;
+    cursor: pointer;
+    position: fixed;
+  }
+  /* ハンバーガー内表示時 */
+  .navOpen .hamburger_line {
+    background-color: #fff;
+  }
+  .navOpen .headerNav ul { right: 0; }
+  .navOpen .hamburger_bg {
+    opacity: .5;
+    visibility: visible;
+  }
+  .navOpen .hamburger_line-1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .navOpen .hamburger_line-2 {
+    width: 0;
+    left: 50%;
+  }
+  .navOpen .hamburger_line-3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+}
+
+/* スマホ */
+@media screen and (max-width: 560px) {
+  .areaConcept {
+    padding: 50px 0;
+  }
+  .areaProduct ul li {
+      width: 96%;
+      margin: 0 2% 20px;
+  }
+  .areaConcept h2 {
+    margin-bottom: 40px;
+  }
+  .areaConcept p {
+    line-height: 2.5;
+  }
+  .footerLink {
+    display: block;
+  }
+  .footerLink dt {
+    display: none;
+  }
+  .footerLink dt,
+  .footerLink dd {
+    width: 100%;
+  }
+  .footerLink dd a {
+    border-top: 1px solid #fff;
+    position: relative;
+  }
+  .footerLink dd a:after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    right: 20px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+}
